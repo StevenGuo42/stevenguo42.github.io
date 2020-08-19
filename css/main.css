@@ -42,11 +42,4 @@ ul.posts li {
     list-style: none;
 }
 
-div.about
-{
-  border-radius: 25px;
-  border: 2px solid #FFFFFF;
-  padding: 20px; 
-  width: 200px;
-  height: 150px;  
-}
+
