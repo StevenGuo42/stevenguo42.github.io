@@ -19,12 +19,14 @@
             $( document ).ready(function() {
                 
                 image = sompret_image_creator("https://archillect.com/archive", "Can't get img.thumb from the site");
-                document.getElementById("demo").innerHTML = image;
+		document.body.appendChild(image)
+                //document.getElementById("demo").innerHTML = image;
 
 
             });
 
             //https://stackoverflow.com/questions/21138707/get-image-src-from-external-url-using-jquery
+	
             function sompret_image_creator(url, ptitle)
             {
                 $.ajax(
