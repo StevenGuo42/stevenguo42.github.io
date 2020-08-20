@@ -31,7 +31,7 @@
                 $.ajax(
                     { 
                     url: url, 
-					dataType: 'application/json', 
+					dataType: 'text/html', 
                     success: function(data) {
                         var html = $.parseHTML( data ), 
                             img = $(html).find("img.thumb"),
