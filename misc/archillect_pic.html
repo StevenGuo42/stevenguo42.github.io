@@ -1,1 +1,60 @@
+<html>
+	<head>
+		<title>archillect pic</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <body>
+    
+        <div id="image">
+            
+        </div>
+        
+        
+        </script>
 
+            $( document ).ready(function() {
+                
+                image = sompret_image_creator("https://archillect.com/archive", "Can't get img.thumb from the site");
+                document.getElementById("demo").innerHTML = image;
+
+
+            });
+
+            //https://stackoverflow.com/questions/21138707/get-image-src-from-external-url-using-jquery
+            function sompret_image_creator(url, ptitle)
+            {
+                $.ajax(
+                    { 
+                    url: url, 
+                    success: function(data) {
+                        var html = $.parseHTML( data ), 
+                            img = $(html).find("img.thumb"),
+                            len = img.length; 
+                        if( len > 0 ){
+                            var src = img.first().attr("src"); // get id of first image
+                        } else {
+                            console.log("Image not found");
+                        }
+                        console.log(src);
+
+                        image_tag='<img src="'+src+'" alt="'+ptitle+'"/>';
+                        return image_tag;
+                    } 
+                });
+            }
+
+
+
+
+
+
+        </script>
+    
+	
+		
+	</body>
+</html>
