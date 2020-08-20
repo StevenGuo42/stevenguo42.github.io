@@ -18,8 +18,9 @@
 
             $( document ).ready(function() {
                 
-                image = sompret_image_creator("https://archillect.com/archive", "Can't get img.thumb from the site");
-		document.body.appendChild(image)
+                image_fn = sompret_image_creator("https://archillect.com/archive", "Can't get img.thumb from the site");
+		$(".image").prepend(image_fn);
+		//document.body.appendChild(image)
                 //document.getElementById("demo").innerHTML = image;
 
 
