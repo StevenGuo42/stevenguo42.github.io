@@ -34,7 +34,11 @@
 			x.send(options.data);
 		}
 
-
+		
+		
+		
+		
+		
 		var html_content = 'empty';
 
 		// Bind event
@@ -43,15 +47,40 @@
 
 			var outputField = document.getElementById('output');
 
-			$( document ).ready(function(e) {
-				//e.preventDefault();
+			$( document ).ready(function() {
+
 				doCORSRequest({
 					method: 'GET',
 					url: url,
 					data: ''
 				}, function printResult(result) {
-					//console.log(result);
 					html_content = result;
+
+
+					var html = $.parseHTML( html_content ), 
+						img = $(html).find("img.thumb"),
+						len = img.length; 
+
+					//console.log("html_content\n\n" + html_content);
+					//console.log(html);
+
+					if( len > 0 ){
+						var src = img.first().attr("src"); // get id of first image
+						console.log(img.first())
+					} else {
+						console.log("Image not found");
+					}
+					console.log(src);
+
+					image_tag='<img id="arch_img" src="'+src+'" alt="'+ptitle+'"/>';
+
+					//$("div.image").prepend(image_tag);
+					document.getElementById("img_div").innerHTML = image_tag
+
+
+
+
+
 					//console.log(html_content);
 				});
 
@@ -59,30 +88,6 @@
 
 			});
 		})();
-
-
-
-
-
-		var html = $.parseHTML( html_content ), 
-			img = $(html).find(".thumb"),
-			len = img.length; 
-		
-		console.log("html_content\n\n" + html_content);
-		console.log(html);
-			
-		if( len > 0 ){
-			var src = img.first().attr("src"); // get id of first image
-			console.log(img.first())
-		} else {
-			console.log("Image not found");
-		}
-		console.log(src);
-
-		image_tag='<img id="arch_img" src="'+src+'" alt="'+ptitle+'"/>';
-
-		//$("div.image").prepend(image_tag);
-		document.getElementById("img_div").innerHTML = image_tag
 			
 			
 			
