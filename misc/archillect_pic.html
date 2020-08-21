@@ -63,7 +63,23 @@
 
 
 
+		$.ajax(
+		{ 
 
+			var img = $.parseHTML( html_content ).find("img.thumb"), 
+				len = img.length; 
+			if( len > 0 ){
+				var src = img.first().attr("src"); // get id of first image
+			} else {
+				console.log("Image not found");
+			}
+			console.log(src);
+
+			image_tag='<img src="'+src+'" alt="'+ptitle+'"/>';
+			//$("div.image").prepend(image_tag);
+			document.getElementById("img_div").innerHTML = image_tag
+
+		});
 			
 			
 			
