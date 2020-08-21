@@ -34,7 +34,7 @@
 		}
 
 
-		var html_content = '';
+		var html_content = 'empty';
 
 		// Bind event
 		(function() {
@@ -50,6 +50,8 @@
 					data: ''
 				}, function printResult(result) {
 					console.log(result);
+					html_content = result;
+					console.log(html_content);
 				});
 
 
