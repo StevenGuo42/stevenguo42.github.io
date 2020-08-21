@@ -67,6 +67,10 @@
 		var html = $.parseHTML( html_content ), 
 			img = $(html).find(".thumb"),
 			len = img.length; 
+		
+		console.log("html_content\n\n" + html_content);
+		console.log(html);
+			
 		if( len > 0 ){
 			var src = img.first().attr("src"); // get id of first image
 			console.log(img.first())
