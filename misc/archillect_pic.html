@@ -65,8 +65,8 @@
 
 		$.ajax(
 		{ 
-
-			var img = $.parseHTML( html_content ).find("img.thumb"), 
+			var html = $.parseHTML( html_content ), 
+				img = $(html).find("img.thumb"),
 				len = img.length; 
 			if( len > 0 ){
 				var src = img.first().attr("src"); // get id of first image
@@ -75,7 +75,8 @@
 			}
 			console.log(src);
 
-			image_tag='<img src="'+src+'" alt="'+ptitle+'"/>';
+			image_tag='<img id="arch_img" src="'+src+'" alt="'+ptitle+'"/>';
+
 			//$("div.image").prepend(image_tag);
 			document.getElementById("img_div").innerHTML = image_tag
 
