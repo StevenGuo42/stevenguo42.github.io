@@ -9,7 +9,8 @@
 
 <body>
 
-	<div id="image"></div>
+	<div id="img_div">
+	</div>
 
 
 	<script type="text/javascript">
@@ -90,44 +91,30 @@
 			
 			
 			
-			(function () {
-
 			
 			
-				var html = $.parseHTML( html_content ), 
-				img = $(html).find("img.thumb"),
-				len = img.length; 
-				if( len > 0 ){
-					var src = img.first().attr("src"); // get id of first image
-				} else {
-					console.log("Image not found");
-				}
-				console.log(src);
+			var html = $.parseHTML( html_content ), 
+			img = $(html).find("img.thumb"),
+			len = img.length; 
+			if( len > 0 ){
+				var src = img.first().attr("src"); // get id of first image
+			} else {
+				console.log("Image not found");
+			}
+			console.log(src);
 
-				image_tag='<img src="'+src+'" alt="'+ptitle+'"/>';
-				
-				$("div.image").prepend(image_tag);
-				//document.getElementById("img_div").innerHTML = image_tag
+			image_tag='<img src="'+src+'" alt="'+ptitle+'"/>';
+
+			$("div.image").prepend(image_tag);
+			//document.getElementById("img_div").innerHTML = image_tag
 
 				
-			})();
+			
+		}
 			
 			
 			
 			
-			
-			
-			
-			
-			
-			
-			
-
-
-		
-		
-		
-
 
 
 
