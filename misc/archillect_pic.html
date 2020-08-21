@@ -51,10 +51,7 @@
 			var x = new XMLHttpRequest();
 				x.open(options.method, cors_api_url + options.url);
 				x.onload = x.onerror = function() {
-					printResult(
-						
-						(x.responseText || '')
-					);
+					printResult(x.responseText);
 				};
 				if (/^POST/i.test(options.method)) {
 					x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -91,7 +88,7 @@
 			
 			
 			
-			
+			console.log(html_content);
 			
 			var html = $.parseHTML( html_content ), 
 			img = $(html).find("img.thumb"),
