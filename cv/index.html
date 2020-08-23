@@ -2,7 +2,7 @@
 layout: default
 title: Steven Guo's CV
 ---
-    <script src='https://cdnjs.com/libraries/pdf.js'></script>
+    <script src='https://cors-anywhere.herokuapp.com/'+'https://cdnjs.com/libraries/pdf.js'></script>
     <div class="blurb">
         
         <h1>CV</h1>
@@ -11,6 +11,7 @@ title: Steven Guo's CV
 
 
             <script id="script">
+                var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
               //
               // If absolute URL from the remote server is provided, configure the CORS
               // header on that server.
