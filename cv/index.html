@@ -2,13 +2,19 @@
 layout: default
 title: Steven Guo's CV
 ---
-    <script src='https://cors-anywhere.herokuapp.com/https://cdnjs.com/libraries/pdf.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js'></script>
     <div class="blurb">
         
         <h1>CV</h1>
         
         <p>WIP</p>
         
-        
+        <div id="PDF"></div>
+
+        <script>PDFObject.embed("https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf", "#PDF");</script>
+
+        <style>
+        .pdfobject-container { height: 30rem; border: 1rem solid rgba(0,0,0,.1); }
+        </style>
 
     </div><!-- /.blurb -->
