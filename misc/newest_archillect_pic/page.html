@@ -9,89 +9,88 @@
 
 <body>
 
-	<div id="img_div">
-	</div>
+	
 
 	
 	<script type="text/javascript">
 		//https://stackoverflow.com/questions/21138707/get-image-src-from-external-url-using-jquery
 		//https://robwu.nl/cors-anywhere.html
+		//https://stackoverflow.com/questions/40354638/ajax-to-get-image-from-remote-server
 		
 
-
-		var url = "https://archillect.com/archive";
-		var ptitle = "Can't get img.thumb from the site";
+		var domain = "https://archillect.com";
+		var ptitle = "Can't get img from the site";
 		
 		var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-		function doCORSRequest(options, printResult) {
-			var x = new XMLHttpRequest();
-			x.open(options.method, cors_api_url + options.url);
-			x.onload = x.onerror = function() {
-				printResult('\n' + (x.responseText || ''));
-			};
-			if (/^POST/i.test(options.method)) {
-				x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			}
-			x.send(options.data);
-		}
-
 		
 		
 		
-		
-		
-		var html_content = 'empty';
-
-		// Bind event
-		(function() {
-
-
-			var outputField = document.getElementById('output');
-
-			$( document ).ready(function() {
-
-				doCORSRequest({
-					method: 'GET',
-					url: url,
-					data: ''
-				}, function printResult(result) {
-					html_content = result;
-
-
-					var html = $.parseHTML( html_content ), 
-						img = $(html).find("img.thumb"),
-						len = img.length; 
+		//find(find).attr(attr) on site
+		function findFirstAttrOnSite(site, find, attr){
+			var result = null;
+			var URL = cors_api_url + site;
+			
+			$.ajax({
+				url: URL,
+				type: 'get',
+				dataType: 'html',
+				async: false,
+				crossDomain: 'true',
+				success: function(data, status) {
+					console.log("Status: "+status);
+					
+					var html = $.parseHTML( data ), 
+						selection = $(html).find(find),
+						len = selection.length; 
 
 					//console.log("html_content\n\n" + html_content);
 					//console.log(html);
 
 					if( len > 0 ){
-						var src = img.first().attr("src"); // get id of first image
-						console.log(img.first())
+						result = selection.first().attr(attr); // get id of first image
+						console.log(selection.first());
+						console.log(result);
 					} else {
-						console.log("Image not found");
+						console.log("selection not found");
 					}
-					console.log(src);
+				
+					/* creating image assuming data is the url of image */
+					var img = $('<img id="image_id">');
+					img.attr('src', data);
+					img.appendTo('#id_of_element_where_you_want_to_add_image'); 
+				} 
+			});
+			return result;
+		}
+		
+		
+		
+		
+		
+		
+		
+			
+		//main
+		(function() {
 
-					image_tag='<img width="200px" id="arch_img" src="'+src+'" alt="'+ptitle+'"/>';
-
-					//$("div.image").prepend(image_tag);
-					document.getElementById("img_div").innerHTML = image_tag
-
-
-
-
-
-					//console.log(html_content);
-				});
-
-
-
+			$( document ).ready(function() {
+				
+				//get newest post
+				post_url = domain + findFirstAttrOnSite(domain + "/archive", "a.post", "href");
+				console.log('post_url = ' + post_url);
+				
+				//get pic url in post
+				pic_url = findFirstAttrOnSite(post_url, "img#ii", "src");
+				console.log('pic_url = ' + pic_url);
+				
+				//add pic (img) to body
+				var img = $('<img id="image_id">');
+				img.attr('src', pic_url);
+				img.appendTo('body'); 
+				
 			});
 		})();
-			
-			
-			
+		// get post site from archive site, then get img url
 		
 		
 		
