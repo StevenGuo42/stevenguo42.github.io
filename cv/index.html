@@ -2,7 +2,7 @@
 layout: default
 title: Steven Guo's CV
 ---
-    <script src='https://cors-anywhere.herokuapp.com/'+'https://cdnjs.com/libraries/pdf.js'></script>
+    <script src='https://cdnjs.com/libraries/pdf.js'></script>
     <div class="blurb">
         
         <h1>CV</h1>
@@ -16,13 +16,12 @@ title: Steven Guo's CV
               // If absolute URL from the remote server is provided, configure the CORS
               // header on that server.
               //
-              var url = 'https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf';
+              var url = cors_api_url+'https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf';
 
               //
               // The workerSrc property shall be specified.
               //
-              pdfjsLib.GlobalWorkerOptions.workerSrc =
-                'mozilla.github.io/pdf.js/build/pdf.worker.js';
+              pdfjsLib.GlobalWorkerOptions.workerSrc = cors_api_url+'mozilla.github.io/pdf.js/build/pdf.worker.js';
 
               //
               // Asynchronous download PDF
