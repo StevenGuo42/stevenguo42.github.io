@@ -6,6 +6,7 @@
 </head>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="functions.js"></script>
 
 <body>
 
@@ -13,63 +14,9 @@
 
 	
 	<script type="text/javascript">
-		//https://stackoverflow.com/questions/21138707/get-image-src-from-external-url-using-jquery
-		//https://robwu.nl/cors-anywhere.html
-		//https://stackoverflow.com/questions/40354638/ajax-to-get-image-from-remote-server
 		
-
 		var domain = "https://archillect.com";
-		var ptitle = "Can't get img from the site";
 		
-		var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-		
-		
-		
-		//find(find).attr(attr) on site
-		function findFirstAttrOnSite(site, find, attr){
-			var result = null;
-			var URL = cors_api_url + site;
-			
-			$.ajax({
-				url: URL,
-				type: 'get',
-				dataType: 'html',
-				async: false,
-				crossDomain: 'true',
-				success: function(data, status) {
-					console.log("Status: "+status);
-					
-					var html = $.parseHTML( data ), 
-						selection = $(html).find(find),
-						len = selection.length; 
-
-					//console.log("html_content\n\n" + html_content);
-					//console.log(html);
-
-					if( len > 0 ){
-						result = selection.first().attr(attr); // get id of first image
-						console.log(selection.first());
-						console.log(result);
-					} else {
-						console.log("selection not found");
-					}
-				
-					/* creating image assuming data is the url of image */
-					var img = $('<img id="image_id">');
-					img.attr('src', data);
-					img.appendTo('#id_of_element_where_you_want_to_add_image'); 
-				} 
-			});
-			return result;
-		}
-		
-		
-		
-		
-		
-		
-		
-			
 		//main
 		(function() {
 
@@ -83,31 +30,19 @@
 				pic_url = findFirstAttrOnSite(post_url, "img#ii", "src");
 				console.log('pic_url = ' + pic_url);
 				
-				//add pic (img) to body
-				var img = $('<img id="image_id">');
+				//add pic (img) to body with link
+				var ref_link = $('<a></a>');
+				ref_link.attr('href', post_url);
+				ref_link.appendTo('body');
+				
+				var img = $('<img>');
 				img.attr('src', pic_url);
-				img.appendTo('body'); 
+				img.appendTo('a'); 
 				
 			});
 		})();
-		// get post site from archive site, then get img url
 		
 		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-
-
 
 	</script>
 
