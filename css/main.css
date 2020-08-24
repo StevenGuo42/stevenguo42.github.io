@@ -51,6 +51,7 @@
  ul.posts li {
 	 list-style: none;
 }
+/*
  td.about {
 	 border-radius: 25px;
 	 width: auto;
@@ -70,4 +71,14 @@
 	 background-color: #f8f8f8;
 	 
 }
+ */
  
+ div.markdown-body {
+	 border-radius: 25px;
+	 width: auto;
+	 height: auto;
+	 margin: 5%;
+	 padding: 5%;
+	 border: 2px solid #000000;
+	 background-color: #f8f8f8;
+}
