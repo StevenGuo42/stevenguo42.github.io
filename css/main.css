@@ -61,9 +61,10 @@
 	 background-color: #f8f8f8;
 }
 
- tbody.about {
+ td.about {
 	 width: auto;
 	 height: auto;
 	 margin: auto;
+	 padding: auto;
 }
  
