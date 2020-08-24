@@ -61,5 +61,11 @@
 	 background-color: #f8f8f8;
 }
 
-
+ tbody.about {
+	 width: auto;
+	 height: auto;
+	 margin: 5%;
+	 padding: 5%;
+	 /*background-color: #f8f8f8;*/
+}
  
