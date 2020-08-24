@@ -52,10 +52,9 @@ However, this code would return an error like this:
 
 <span style="color:red">
 ```
-Access to XMLHttpRequest at 'https://example.com/example' from origin 'null' 
-has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+Access to XMLHttpRequest at 'https://example.com/example' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
-</span>.
+</span>
 
 To solve this, I used the [CORS Anywhere](https://github.com/Rob--W/cors-anywhere/) proxy
 to add CORS headers to the request: 
