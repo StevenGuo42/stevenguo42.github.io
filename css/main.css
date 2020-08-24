@@ -62,12 +62,12 @@
 }
  
  td.about {
-	 border-radius: 25px;
+	 border-radius: 15px;
 	 width: auto;
 	 height: auto;
-	 margin: 5%;
-	 padding: 5%;
+	 margin: 3%;
+	 padding: 3%;
 	 border: solid #000000;
-	 border-width: 2px;
+	 border-width: 1px;
 	 background-color: #f8f8f8;
 }
