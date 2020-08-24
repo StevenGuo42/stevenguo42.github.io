@@ -1,7 +1,0 @@
----
-layout: post
-title: "Extract Contents and Solving CORS with jQuery"
-date: 2020-08-23
----
-
-WIP

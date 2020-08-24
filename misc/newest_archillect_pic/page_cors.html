@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>archillect pic</title>
+	<!-- link to main stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="functions_cors.js"></script>
+
+<body>
+
+	
+
+	
+	<script type="text/javascript">
+		
+		var domain = "https://archillect.com";
+		
+		//main
+		(function() {
+
+			$( document ).ready(function() {
+				
+				//get newest post
+				post_url = domain + findFirstAttrOnSite(domain + "/archive", "a.post", "href");
+				console.log('post_url = ' + post_url);
+				
+				//get pic url in post
+				pic_url = findFirstAttrOnSite(post_url, "img#ii", "src");
+				console.log('pic_url = ' + pic_url);
+				
+				//add pic (img) to body with link
+				var ref_link = $('<a></a>');
+				ref_link.attr('href', post_url);
+				ref_link.appendTo('body');
+				
+				var img = $('<img alt = "archillect pic here">');
+				img.attr('src', pic_url);
+				img.appendTo('a'); 
+				
+			});
+		})();
+		
+		
+
+	</script>
+
+
+
+</body>
+</html>
