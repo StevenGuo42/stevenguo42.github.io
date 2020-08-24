@@ -82,7 +82,7 @@ function findFirstAttrOnSite(site, find, attr){
 The `cors_api_url` was prefixed to `site` to use the proxy. 
 </span>
 
-Then the code should work with no problems. Here is [an example](stevenguo42.github.io/misc/newest_archillect_pic/page.html).
+Then the code should work with no problems. Here is [an example](https://stevenguo42.github.io/misc/newest_archillect_pic/page.html).
 
 <p>
 Links:
