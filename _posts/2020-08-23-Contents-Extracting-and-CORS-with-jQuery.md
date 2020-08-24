@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Extract Contents and CORS with jQuery"
+title: "Content Extracting and CORS with jQuery"
 date: 2020-08-23
 ---
 
