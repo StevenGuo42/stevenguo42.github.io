@@ -85,7 +85,6 @@ Links:
 
 <span style="font-size:0.9em; line-height: 80%;">
 jQuery selector: https://api.jquery.com/category/selectors/
-
 CORS Anywhere: https://github.com/Rob--W/cors-anywhere/
 </span>
 
