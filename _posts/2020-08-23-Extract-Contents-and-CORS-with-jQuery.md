@@ -87,8 +87,8 @@ Then the code should work with no problems. Here is [an example](stevenguo42.git
 <p>
 Links:
 <span style="font-size:0.8em; line-height: 50%;">
-jQuery selector: https://api.jquery.com/category/selectors/
-CORS Anywhere: https://github.com/Rob--W/cors-anywhere/
+<br>jQuery selector: https://api.jquery.com/category/selectors/
+<br>CORS Anywhere: https://github.com/Rob--W/cors-anywhere/
 </span>
 </p>
 
