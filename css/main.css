@@ -51,27 +51,15 @@
  ul.posts li {
 	 list-style: none;
 }
-/*
- td.about {
-	 border-radius: 25px;
-	 width: auto;
-	 height: auto;
-	 margin: 5%;
-	 padding: 5%;
-	 border: 2px solid #000000;
-	 background-color: #f8f8f8;
-}
 
  tbody.about {
 	 width: auto;
 	 height: auto;
 	 margin: 5%;
 	 padding: 5%;
-	 border: 2px solid #000000;
-	 background-color: #f8f8f8;
+	 background-color: #000000;
 	 
 }
- */
  
  td.about {
 	 border-radius: 25px;
