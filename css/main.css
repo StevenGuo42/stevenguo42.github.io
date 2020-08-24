@@ -56,15 +56,10 @@
 	 width: auto;
 	 height: auto;
 	 margin: auto;
-	 padding: 2px 0px 0px 0px;
+	 padding: auto;
 	 border: 2px solid #000000;
 	 background-color: #f8f8f8;
 }
 
- td.about {
-	 width: auto;
-	 height: auto;
-	 margin: auto;
-	 padding: auto;
-}
+
  
