@@ -10,8 +10,24 @@ title: 404 page not found
 
 <h1>404 The page you're looking for doesn't exist</h1>
 <h3>But here is the random picture from <a href="archillect.com">archillect<a></h3>
-<div class='pic'>
+<div class='pic_404'>
 </div>
+
+<style>
+
+
+	img{
+		display: block;
+		margin-left: auto;
+		margin-right: auto 
+	}
+	h1 { text-align: center }
+	h3 { text-align: center }
+
+</style>
+
+
+
 
 <script type="text/javascript">
 	
@@ -38,12 +54,12 @@ title: 404 page not found
 			//add pic (img) to body with link
 			var ref_link = $('<a></a>');
 			ref_link.attr('href', post_url);
-			ref_link.attr('class', 'pic_a');
-			ref_link.appendTo('div.pic');
+			ref_link.attr('class', 'a_404');
+			ref_link.appendTo('div.pic_404');
 			
 			var img = $('<img alt = "archillect pic here">');
 			img.attr('src', pic_url);
-			img.appendTo('a.pic_a'); 
+			img.appendTo('a.a_404'); 
 			
 		});
 	})();
