@@ -52,10 +52,10 @@ Then get the `attr` attribute of the first element it found.
 However, this code would return an error like this:
 
 <span style="color:red">
-{% highlight %}
+```error
 Access to XMLHttpRequest at 'https://example.com/example' from origin 'null' has been blocked 
 by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-{% endhighlight %}
+```
 </span>
 
 To solve this, I used the [CORS Anywhere](https://github.com/Rob--W/cors-anywhere/) proxy
@@ -78,7 +78,7 @@ function findFirstAttrOnSite(site, find, attr){
 The `cors_api_url` was prefixed to `site` to use the proxy. 
 </span>
 
-Then the code should work with no problems. Here is an example: stevenguo42.github.io/misc/newest_archillect_pic/page.html
+Then the code should work with no problems. Here is [an example](stevenguo42.github.io/misc/newest_archillect_pic/page.html)
 
 
 Links:
