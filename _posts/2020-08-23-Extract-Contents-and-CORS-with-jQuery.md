@@ -11,7 +11,7 @@ So the following function was wiritten to requst the html and
 extract the specific attributes of a specific element with jQuery.
 
 
-```javascript
+{% highlight javascript linenos %}
 //find(find).attr(attr) on site
 function findFirstAttrOnSite(site, find, attr){
 	var result = null;
@@ -41,11 +41,12 @@ function findFirstAttrOnSite(site, find, attr){
 	});
 	return result;
 }
-```
+{% endhighlight %}
+
 <span style="font-size:0.7em;">
-This code will get the html of the ```site``` and 
-find all the elements that match the ```find``` [jQuery selector](https://api.jquery.com/category/selectors/).
-Then get the ```attr``` attribute of the first element it found. 
+This code will get the html of the `site` and 
+find all the elements that match the `find` [jQuery selector](https://api.jquery.com/category/selectors/).
+Then get the `attr` attribute of the first element it found. 
 </span>
 
 However, this code would return an error like this:
@@ -59,7 +60,7 @@ Access to XMLHttpRequest at 'https://example.com/example' from origin 'null' has
 To solve this, I used the [CORS Anywhere](https://github.com/Rob--W/cors-anywhere/) proxy
 to add CORS headers to the request: 
 
-```javascript
+{% highlight javascript linenos %}
 //find(find).attr(attr) on site
 function findFirstAttrOnSite(site, find, attr){
 	var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
@@ -70,10 +71,10 @@ function findFirstAttrOnSite(site, find, attr){
 	.
 	return result;
 }
-```
+{% endhighlight %}
 
 <span style="font-size:0.7em;">
-The ```cors_api_url``` was prefixed to ```site``` to use the proxy. 
+The `cors_api_url` was prefixed to `site` to use the proxy. 
 </span>
 
 Then the code should work with no problems. Here is an example: stevenguo42.github.io/misc/newest_archillect_pic/page.html
