@@ -1,0 +1,53 @@
+---
+layout: default
+title: 404 page not found
+---
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./misc/newest_archillect_pic/functions.js"></script>
+
+
+<h1>404 The page you're looking for doesn't exist</h1>
+<h3>But here is the random picture from <a href="archillect.com">archillect<a></h3>
+	
+<script type="text/javascript">
+	
+	var domain = "https://archillect.com";
+	
+	//main
+	(function() {
+
+		$( document ).ready(function() {
+			
+			//get newest post
+			var newest = findFirstAttrOnSite(domain + "/archive", "a.post", "href");
+			newest = newest.slice(1); //remove /
+			newest = parseInt(newest, 10);// to int
+			postid = Math.floor(Math.random() * newest) + 1; //get rnd post id from 1 to newest
+			post_url = domain + '/' + postid.toString(); //get rnd post url
+			
+			console.log('post_url = ' + post_url);
+			
+			//get pic url in post
+			pic_url = findFirstAttrOnSite(post_url, "img#ii", "src");
+			console.log('pic_url = ' + pic_url);
+			
+			//add pic (img) to body with link
+			var ref_link = $('<a></a>');
+			ref_link.attr('href', post_url);
+			ref_link.appendTo('body');
+			
+			var img = $('<img alt = "archillect pic here">');
+			img.attr('src', pic_url);
+			img.appendTo('a'); 
+			
+		});
+	})();
+	
+	
+
+</script>
+
+</body>
+</html>
