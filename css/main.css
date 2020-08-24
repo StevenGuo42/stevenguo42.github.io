@@ -73,12 +73,13 @@
 }
  */
  
- div.markdown-body {
+ td.about {
 	 border-radius: 25px;
 	 width: auto;
 	 height: auto;
 	 margin: 5%;
 	 padding: 5%;
-	 border: 2px solid #000000;
+	 border: solid #000000;
+	 border-width: 2px;
 	 background-color: #f8f8f8;
 }
