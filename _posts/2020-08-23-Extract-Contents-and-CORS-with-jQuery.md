@@ -52,9 +52,11 @@ Then get the `attr` attribute of the first element it found.
 However, this code would return an error like this:
 
 <span style="color:red">
-<code>
+<code class="error">
+<pre>
 Access to XMLHttpRequest at 'https://example.com/example' from origin 'null' has been blocked 
 by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+</pre>
 </code>
 </span>
 
@@ -83,10 +85,10 @@ Then the code should work with no problems. Here is [an example](stevenguo42.git
 
 Links:
 
-<span style="font-size:0.9em; line-height: 80%;">
+<span style="font-size:0.8em; line-height: 50%;">
 jQuery selector: https://api.jquery.com/category/selectors/
 
-<span style="font-size:0.9em; line-height: 80%;">
+<span style="font-size:0.8em; line-height: 50%;">
 CORS Anywhere: https://github.com/Rob--W/cors-anywhere/
 
 
