@@ -1,3 +1,5 @@
+@import "sass-code-highlight/github";
+
 body {
     margin: 60px auto;
     width: 70%;
