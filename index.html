@@ -2,8 +2,71 @@
 layout: default
 title: Steven's Homepage 
 ---
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://StevenGuo42.GitHub.io/misc/newest_archillect_pic/functions.js"></script>
+		
+		
 		<div class="blurb">
 			<h1>Hi there, I'm Steven!</h1>
-			<p>I'm BSc CS student in Canada. <a href="/about">Read more about me...</a></p>
+			<p>I'm a BSc CS student from China, currently studying in Canada. <a href="/about">Read more about me...</a></p>
+			
+			
+			
+			<p>I didn't bother to make a fancy site. But here is the newest picture from <a href="archillect.com">archillect<a> to flavour up this plain page. </p>
+
+			<div class='new_arch'>
+			</div>
+			<h1> </h1>
+
+			<style>
+
+
+				img{
+					display: block;
+					margin-left: auto;
+					margin-right: auto 
+				}
+				
+
+			</style>
+
+
+
+
+			<script type="text/javascript">
+				
+				var domain = "https://archillect.com";
+				
+				//main
+				(function() {
+
+					$( document ).ready(function() {
+						
+						//get newest post
+						post_url = domain + findFirstAttrOnSite(domain + "/archive", "a.post", "href");
+						console.log('post_url = ' + post_url);
+						
+						//get pic url in post
+						pic_url = findFirstAttrOnSite(post_url, "img#ii", "src");
+						console.log('pic_url = ' + pic_url);
+						
+						//add pic (img) to body with link
+						var ref_link = $('<a></a>');
+						ref_link.attr('href', post_url);
+						ref_link.attr('class', 'a_new_arch');
+						ref_link.appendTo('div.new_arch');
+						
+						var img = $('<img alt = "archillect pic here">');
+						img.attr('src', pic_url);
+						img.appendTo('a.a_new_arch');
+					});
+				})();
+				
+				
+
+			</script>
+
+
+
 		</div><!-- /.blurb -->
 
