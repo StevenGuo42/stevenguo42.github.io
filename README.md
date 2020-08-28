@@ -1,2 +1,2 @@
 # [StevenGuo42.GitHub.io](https://stevenguo42.github.io/)
-My Homepage
+My GitHub Page
