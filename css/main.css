@@ -70,3 +70,7 @@
 	 border: solid #000000;
 	 border-width: 1px;
 }
+
+div.utterances {
+	 border-top: 1px solid #d5d5d5;
+}
