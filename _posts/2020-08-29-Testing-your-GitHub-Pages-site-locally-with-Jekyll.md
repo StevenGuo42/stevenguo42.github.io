@@ -31,7 +31,6 @@ sudo gem update
 sudo gem install jekyll bundler
 {% endhighlight %}
 
-
 Then change your directory to the publishing source:
 
 {% highlight bash %}
