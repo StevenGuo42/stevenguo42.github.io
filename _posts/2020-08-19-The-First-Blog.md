@@ -8,16 +8,18 @@ Hello world!
 
 ```bash
 #test
-echo 'test'
+echo 'Hello world!'
 #test
 #test
 ```
 
 {% highlight bash linenos %}
 #test
-echo 'test'
+echo 'Hello world!'
 #test
 #test
 {% endhighlight %}
+
+`Hello world!`
 
 powered by [Jekyll](http://jekyllrb.com)
