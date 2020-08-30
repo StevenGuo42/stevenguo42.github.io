@@ -1,0 +1,127 @@
+I"<p>I’ll talk about how I use jQuery to extract contents from a external website and solving the CORS issue in this blog.</p>
+
+<p>I was trying to build a site which can grab the newest picture from <a href="http://archillect.com/">Archillect</a>. 
+So the following function was wiritten to requst the html and 
+extract the specific attributes of a specific element with jQuery.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="code"><pre><span class="c1">//find(find).attr(attr) on site
+</span>
+<span class="kd">function</span> <span class="nx">findFirstAttrOnSite</span><span class="p">(</span><span class="nx">site</span><span class="p">,</span> <span class="nx">find</span><span class="p">,</span> <span class="nx">attr</span><span class="p">){</span>
+	<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">URL</span> <span class="o">=</span> <span class="nx">site</span><span class="p">;</span>
+	
+	<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+		<span class="na">url</span><span class="p">:</span> <span class="nx">URL</span><span class="p">,</span>
+		<span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">dataType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">html</span><span class="dl">'</span><span class="p">,</span>
+		<span class="na">async</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+		<span class="na">crossDomain</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span>
+		
+		<span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Status: </span><span class="dl">"</span><span class="o">+</span><span class="nx">status</span><span class="p">);</span>
+			
+			<span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">data</span><span class="p">,</span> 
+				<span class="nx">selection</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">html</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="nx">find</span><span class="p">),</span>
+				<span class="nx">len</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> 
+
+			<span class="k">if</span><span class="p">(</span> <span class="nx">len</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+				<span class="nx">result</span> <span class="o">=</span> <span class="nx">selection</span><span class="p">.</span><span class="nx">first</span><span class="p">().</span><span class="nx">attr</span><span class="p">(</span><span class="nx">attr</span><span class="p">);</span> <span class="c1">// get id of first image
+</span>
+				<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">selection not found</span><span class="dl">"</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span> 
+	<span class="p">});</span>
+	<span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p><span style="font-size:0.7em;">
+This code will get the html of the <code class="language-plaintext highlighter-rouge">site</code> and 
+find all the elements that match the <code class="language-plaintext highlighter-rouge">find</code> <a href="https://api.jquery.com/category/selectors/">jQuery selector</a>.
+Then get the <code class="language-plaintext highlighter-rouge">attr</code> attribute of the first element it found. 
+</span></p>
+
+<p>However, this code would return an error like this:</p>
+
+<figure class="highlight">
+<pre>
+<span style="color:red">
+Access to XMLHttpRequest at 'https://example.com/example' from origin 'null' has been blocked 
+by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+</span>
+</pre>
+</figure>
+
+<p>To solve this, I used the <a href="https://github.com/Rob--W/cors-anywhere/">CORS Anywhere</a> proxy
+to add CORS headers to the request:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="c1">//find(find).attr(attr) on site
+</span>
+<span class="kd">function</span> <span class="nx">findFirstAttrOnSite</span><span class="p">(</span><span class="nx">site</span><span class="p">,</span> <span class="nx">find</span><span class="p">,</span> <span class="nx">attr</span><span class="p">){</span>
+	<span class="kd">var</span> <span class="nx">cors_api_url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://cors-anywhere.herokuapp.com/</span><span class="dl">'</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">URL</span> <span class="o">=</span> <span class="nx">cors_api_url</span> <span class="o">+</span> <span class="nx">site</span><span class="p">;</span>
+	<span class="p">.</span>
+	<span class="p">.</span>
+	<span class="p">.</span>
+	<span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p><span style="font-size:0.7em;">
+The <code class="language-plaintext highlighter-rouge">cors_api_url</code> was prefixed to <code class="language-plaintext highlighter-rouge">site</code> to use the proxy. 
+</span></p>
+
+<p>Then the code should work with no problems. Here is <a href="https://stevenguo42.github.io/misc/newest_archillect_pic/page.html">an example</a>.</p>
+
+<p>
+Links:
+<span style="font-size:0.8em; line-height: 50%;">
+<br />jQuery ajax: <a href="https://api.jquery.com/jquery.ajax/">https://api.jquery.com/jquery.ajax/</a>
+<br />jQuery selector: <a href="https://api.jquery.com/category/selectors/">https://api.jquery.com/category/selectors/</a>
+<br />CORS Anywhere: <a href="https://github.com/Rob--W/cors-anywhere/">https://github.com/Rob--W/cors-anywhere/</a>
+</span>
+</p>
+
+:ET
