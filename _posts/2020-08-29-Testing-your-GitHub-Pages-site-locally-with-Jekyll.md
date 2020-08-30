@@ -31,18 +31,6 @@ sudo gem update
 sudo gem install jekyll bundler
 {% endhighlight %}
 
-```bash
-null=$'\0';
-echo all further code is highlighted as string
-#skdi
-#nvjsd
-````
-{% highlight bash %}
-null=$'\0';
-echo all further code is highlighted as string
-#skdi
-#nvjsd
-{% endhighlight %}
 
 Then change your directory to the publishing source:
 
