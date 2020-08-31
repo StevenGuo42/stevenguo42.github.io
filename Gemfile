@@ -6,5 +6,5 @@ gem "jekyll"
 gem 'jekyll-feed'
 group :jekyll_plugins do
     gem 'github-pages'
-	gem 'jekyll-twitter-plugin'
 end
+gem 'jekyll-twitter-plugin'
