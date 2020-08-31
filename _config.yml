@@ -8,3 +8,5 @@ highlighter: rouge
 kramdown:
   input: GFM
   auto_ids: true
+
+plugins: ['jekyll-twitter-plugin']
