@@ -9,3 +9,7 @@ kramdown:
   input: GFM
   auto_ids: true
 
+plugins:
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-twitter-plugin
