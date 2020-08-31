@@ -80,3 +80,14 @@ div.container {
 div.post {
 	 border-bottom: 1px solid #d5d5d5;
 }
+
+.flex_box_container{
+    display: flex;
+}
+.fixed{
+    width: 25%;
+}
+.flex-item{
+    flex-grow: 1;
+}
+

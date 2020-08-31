@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: contentWithTweet
 title: "The First Blog (for testing)"
 date: 2020-08-19
 ---

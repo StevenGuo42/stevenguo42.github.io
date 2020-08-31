@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 gem 'nokogiri'
-gem 'rack', '~> 2.0.1'
+gem 'rack'
 gem 'rspec'
-gem "jekyll", "~> 4.0"
+gem "jekyll"
 gem 'jekyll-feed'
+group :jekyll_plugins do
+    gem 'github-pages'
+	gem 'jekyll-twitter-plugin'
+end
