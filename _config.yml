@@ -9,4 +9,6 @@ kramdown:
   input: GFM
   auto_ids: true
 
-plugins: ['jekyll-twitter-plugin']
+plugins: 
+  - jekyll-twitter-plugin
+  - jekyll-toc

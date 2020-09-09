@@ -1,11 +1,20 @@
 ---
 layout: default
+toc: true
 ---
 <h1>{{ page.title }}</h1>
 <p class="meta page_date">{{ page.date | date_to_string }}</p>
 
-<div class="post">
-  {{ content }}
+<div class="postNtoc">
+
+        <div class="post">
+                {{ content | inject_anchors }}
+        </div>
+        <div class="toc-container">
+                <div class="toc-post-title">{{ page.title }}</div>
+                {{ content | toc_only }}
+        </div>
+
 </div>
 <script src="https://utteranc.es/client.js"
         repo="StevenGuo42/StevenGuo42.GitHub.io"

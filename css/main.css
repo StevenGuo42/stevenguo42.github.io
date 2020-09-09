@@ -1,6 +1,6 @@
 
 @import "sass-code-highlight/github.css";
-
+@import "toc.css";
 
  body {
 	 margin: 60px auto;
@@ -46,6 +46,12 @@
 	 line-height: 1.4em;
 	 color: #333;
 }
+
+p.page_date{
+	font-size: 1.7em;
+	font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+}
+
  ul.posts {
 	 margin: 20px auto 40px;
 	 font-size: 1.5em;
@@ -79,6 +85,7 @@ div.container {
 
 div.post {
 	 border-bottom: 1px solid #d5d5d5;
+	 flex: 1;
 }
 
 .flex_box_container{

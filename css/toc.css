@@ -1,0 +1,49 @@
+div.post{
+	
+}
+
+div.table-of-contents{
+	
+}
+
+.toc-container {
+	position: -webkit-sticky;
+	position: sticky;
+	width: 25%;
+	top: 0
+	align-self: start;
+	/*right: 3rem;*/
+	max-width: 350px;
+}
+
+@media screen and (max-width:1024px) {
+	.toc-container {
+		visibility: hidden;
+		width: 0;
+		margin: 0;
+	}
+}
+
+.toc-post-title {
+	font-size: 1.3rem;
+	margin-bottom: .8rem;
+}
+
+.section-nav ul {
+	list-style: none;
+	margin: 0;
+}
+
+.section-nav a {
+	text-decoration: none;
+	color: #9b9b9b;
+	font-size: 1.3rem;
+}
+
+.section-nav a.active {
+	color: #333;
+}
+div.postNtoc{
+	display: flex;
+	justify-content: space-between;
+}
