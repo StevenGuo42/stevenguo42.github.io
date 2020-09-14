@@ -2,17 +2,19 @@
 layout: default
 title: Steven Guo's CV
 ---
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js'></script>
+
     <div class="blurb">
         
         <h1>CV</h1>
-        
+        <h2><a href="https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf">Download<a></h2>
         <div id="PDF"></div>
+        
+        <iframe class="render-viewer " 
+                style="height: calc(100vw * 1.8);width:100%;border: 0.5rem solid rgba(0,0,0,.1);overflow:visible;"
+                src="https://render.githubusercontent.com/view/pdf?commit=06b33a3480c2d688cc50ce8172e5b0ef445a70b4&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f53746576656e47756f34322f53746576656e47756f34322f303662333361333438306332643638386363353063653831373265356230656634343561373062342f43562e706466&amp;nwo=StevenGuo42%2FStevenGuo42&amp;path=CV.pdf&amp;repository_id=285688180&amp;repository_type=Repository#6b564cf6-936c-42dd-ae18-193c477a3415" sandbox="allow-scripts allow-same-origin allow-top-navigation" title="File display"
+                scrolling="yes">
+                Viewer requires iframe.
+        </iframe>
 
-        <script>PDFObject.embed("https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf", "#PDF");</script>
-
-        <style>
-        .pdfobject-container { height: 60rem; border: 0.5rem solid rgba(0,0,0,.1); }
-        </style>
 
     </div><!-- /.blurb -->
