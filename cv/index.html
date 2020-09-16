@@ -8,9 +8,14 @@ title: Steven Guo's CV
         <h1>CV</h1>
         <h2><a href="https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf">Download the latest version<a></h2>
         
-        <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="75" class="slider" id="pdf_width"> <p id='slider_val'></p>
-        </div>
+
+        <table style="width:auto">
+        <tr>
+                <th><input type="range" min="1" max="100" value="75" class="slider" id="pdf_width"></th>
+                <th><p id='slider_val' style="margin: 0 1rem"></p></th> 
+        </tr>
+        </table>
+                 
         
         <iframe class="render-viewer" 
                 style="height: calc(100vw * 0.75 * 1.8);width: 75%; border: 0.5rem solid rgba(0,0,0,.1);overflow:visible;display:block;margin: 0 auto;"
