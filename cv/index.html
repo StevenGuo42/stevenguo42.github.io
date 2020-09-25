@@ -6,25 +6,28 @@ title: Steven Guo's CV
     <div class="blurb">
         
         <h1>CV</h1>
-        <h2><a href="https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf">Download the latest version<a></h2>
+        <h2><a href="https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf">Download PDF<a></h2>
         
 
-        <table style="width:auto">
+<!--         <table style="width:auto">
         <tr>
                 <th><input type="range" min="1" max="100" value="75" class="slider" id="pdf_width"></th>
                 <th><p id='slider_val' style="margin: 0 1rem"></p></th> 
         </tr>
-        </table>
+        </table> -->
                  
-        
-        <iframe class="render-viewer" 
+                <iframe src="https://docs.google.com/gview?url=https://github.com/StevenGuo42/StevenGuo42/raw/master/CV.pdf &embedded=true" 
+                        style="height: 50vw; width: 85%; border: 0.5rem solid rgba(0,0,0,.1);overflow:visible;display:block;margin: 0 auto;"
+                        frameborder="0"></iframe>
+
+<!--         <iframe class="render-viewer" 
                 style="height: calc(100vw * 0.75 * 1.8);width: 75%; border: 0.5rem solid rgba(0,0,0,.1);overflow:visible;display:block;margin: 0 auto;"
                 src="https://render.githubusercontent.com/view/pdf?commit=8986c6b68bdd2f136a44d4363255082b7b9dd333&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f53746576656e47756f34322f53746576656e47756f34322f383938366336623638626464326631333661343464343336333235353038326237623964643333332f43562e706466&nwo=StevenGuo42%2FStevenGuo42&path=CV.pdf&repository_id=285688180&repository_type=Repository#6cdb0e44-e7c3-488d-aad1-649c49376807" 
                 sandbox="allow-scripts allow-same-origin allow-top-navigation" title="File display"
                 scrolling="yes">
                 Viewer requires iframe.
-        </iframe>
-        <script>
+        </iframe> -->
+<!--         <script>
                 $("#slider_val").html("zoom: 75%");
                 $(".render-viewer").css("width","75%", "height", "calc(75vw * 1.8)");
                 
@@ -32,7 +35,7 @@ title: Steven Guo's CV
                         $("#pdf_width").change(function(e){
                                 var width = $("#pdf_width").val();
                                 viewer_width = width + "%";
-                                viewer_height = parseInt(width) * 1.8 + "vw"
+                                viewer_height = parseInt(width) * 0.85 + "vw"
                                 
                                 $("#slider_val").html("zoom: " + viewer_width);
                                 $(".render-viewer").css({"width": viewer_width , "height": viewer_height});
@@ -41,6 +44,6 @@ title: Steven Guo's CV
 
 
 
-        </script>
+        </script> -->
 
     </div><!-- /.blurb -->
