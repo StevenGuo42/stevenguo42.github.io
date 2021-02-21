@@ -3,12 +3,12 @@
 //https://stackoverflow.com/questions/40354638/ajax-to-get-image-from-remote-server
 //https://github.com/Freeboard/thingproxy
 
-var cors_api_url = 'https://thingproxy.freeboard.io/fetch/';
+var cors_api_url = 'http://alloworigin.com/get?url=';
 
 //find(find).attr(attr) on site
 function findFirstAttrOnSite(site, find, attr){
 	var result = null;
-	var URL = cors_api_url + site;
+	var URL = cors_api_url + encodeURIComponent(site);
 	
 	$.ajax({
 		url: URL,
