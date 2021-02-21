@@ -9,6 +9,7 @@ var cors_api_url = 'https://api.allorigins.win/get?url=';
 function findFirstAttrOnSite(site, find, attr){
 	var result = null;
 	var URL = cors_api_url + encodeURIComponent(site);
+	console.log(URL);
 	
 	$.ajax({
 		url: URL,
