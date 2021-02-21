@@ -2,7 +2,7 @@
 //https://robwu.nl/cors-anywhere.html
 //https://stackoverflow.com/questions/40354638/ajax-to-get-image-from-remote-server
 		
-var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+var cors_api_url = 'https://thingproxy.freeboard.io/fetch/';
 
 //find(find).attr(attr) on site
 function findFirstAttrOnSite(site, find, attr){
