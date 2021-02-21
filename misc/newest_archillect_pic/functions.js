@@ -3,7 +3,7 @@
 //https://stackoverflow.com/questions/40354638/ajax-to-get-image-from-remote-server
 //https://github.com/Freeboard/thingproxy
 
-var cors_api_url = 'http://alloworigin.com/get?url=';
+var cors_api_url = 'https://api.allorigins.win/get?url=';
 
 //find(find).attr(attr) on site
 function findFirstAttrOnSite(site, find, attr){
