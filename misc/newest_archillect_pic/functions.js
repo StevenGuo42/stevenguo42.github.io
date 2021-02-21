@@ -1,7 +1,8 @@
 //https://stackoverflow.com/questions/21138707/get-image-src-from-external-url-using-jquery
 //https://robwu.nl/cors-anywhere.html
 //https://stackoverflow.com/questions/40354638/ajax-to-get-image-from-remote-server
-		
+//https://github.com/Freeboard/thingproxy
+
 var cors_api_url = 'https://thingproxy.freeboard.io/fetch/';
 
 //find(find).attr(attr) on site
